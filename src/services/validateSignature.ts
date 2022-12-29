@@ -1,4 +1,4 @@
-import crypto = require('crypto')
+const crypto = require('crypto-js')
 
 /**
  *
@@ -15,7 +15,7 @@ export function validateSignature(
   const sourceString =
     signatureVersion === 'v1' ? clientSecret + requestBody : clientSecret + webhooksMethod + webhooksUrl + requestBody
 
-  const hash = crypto.createHash('sha256').update(sourceString).digest('hex')
+  const hash = crypto.SHA256(sourceString)
 
   return signature === hash
 }
