@@ -27,7 +27,7 @@ export class Signature {
         return crypto.SHA256(sourceString)
       case 'v3':
         sourceString = method + options.url + options.requestBody + options.timestamp
-        const hash = crypto.SHA256(sourceString)
+        const hash = crypto.SHA256(sourceString, options.clientSecret)
         return hash.toString(crypto.enc.Base64)
       default:
         throw new Error(`Not supported signature version: ${signatureVersion}`)
