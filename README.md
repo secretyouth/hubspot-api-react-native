@@ -1,6 +1,6 @@
-# hubspot-api-nodejs
+# hubspot-api-react-native
 
-NodeJS v3 [HubSpot API](https://developers.hubspot.com/docs/api/overview) SDK(Client) files
+This is a port of the NodeJS V3 client [HubSpot API](https://developers.hubspot.com/docs/api/overview) to react native. Replacing crypto in favor of `cypto-js`.
 
 ### Sample apps
 

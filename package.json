@@ -1,7 +1,7 @@
 {
-  "name": "@hubspot/api-client",
+  "name": "@hubspot/api-client-rn",
   "version": "8.3.2",
-  "description": "NodeJS v3 [HubSpot API](https://developers.hubspot.com/docs/api/overview) SDK(Client) files",
+  "description": "A RN port of NodeJS v3 [HubSpot API](https://developers.hubspot.com/docs/api/overview) SDK(Client) files",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -14,7 +14,7 @@
     "version:set": "replace '@VERSION@' $npm_package_version ./lib/src/configuration/version.*",
     "prepublishOnly": "npm run version:set"
   },
-  "author": "HubSpot",
+  "author": "HubSpot - ported by Jamie <jamie@rkda.com.au>",
   "license": "ISC",
   "dependencies": {
     "bottleneck": "^2.19.5",
@@ -55,7 +55,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HubSpot/hubspot-api-nodejs.git"
+    "url": "git+https://github.com/secretyouth/hubspot-api-react-native"
   },
   "keywords": [
     "hubspot",
@@ -67,7 +67,7 @@
     "wrapper"
   ],
   "bugs": {
-    "url": "https://github.com/HubSpot/hubspot-api-nodejs/issues"
+    "url": "https://github.com/secretyouth/hubspot-api-react-native/issues"
   },
-  "homepage": "https://github.com/HubSpot/hubspot-api-nodejs#readme"
+  "homepage": "https://github.com/secretyouth/hubspot-api-react-native#readme"
 }
