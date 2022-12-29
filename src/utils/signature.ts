@@ -1,4 +1,4 @@
-import crypto = require('crypto')
+const crypto = require("crypto-js");
 import { ISignatureOptions } from './ISignatureOptions'
 
 export class Signature {
@@ -21,13 +21,14 @@ export class Signature {
     switch (signatureVersion) {
       case 'v1':
         sourceString = options.clientSecret + options.requestBody
-        return crypto.createHash('sha256').update(sourceString).digest('hex')
+        return crypto.SHA256(sourceString)
       case 'v2':
         sourceString = options.clientSecret + method + options.url + options.requestBody
-        return crypto.createHash('sha256').update(sourceString).digest('hex')
+        return crypto.SHA256(sourceString)
       case 'v3':
         sourceString = method + options.url + options.requestBody + options.timestamp
-        return crypto.createHmac('sha256', options.clientSecret).update(sourceString).digest('base64')
+        const hash = crypto.SHA256(sourceString)
+        return hash.toString(crypto.enc.Base64)
       default:
         throw new Error(`Not supported signature version: ${signatureVersion}`)
     }
